@@ -11746,9 +11746,18 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="To-predict-the-loaction-of-a-subject-based-on-the-call-records.">To predict the loaction of a subject based on the call records.<a class="anchor-link" href="#To-predict-the-loaction-of-a-subject-based-on-the-call-records.">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[404]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#to find some kind of geogrphical pattern for a person in some are</span>
@@ -11762,7 +11771,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[405]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -11776,7 +11785,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[406]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;tryit.csv&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
@@ -11814,7 +11823,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[407]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#unique candidates in data</span>
@@ -11851,12 +11860,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[408]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#print data[[&#39;AREADESCRIPTION&#39;,&#39;LAT&#39;,&#39;LONG&#39;]].drop_duplicates()</span>
 <span class="n">mew</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;NICKNAME&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Jackal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;AREADESCRIPTION&#39;</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;NOT AVAILABLE&#39;</span><span class="p">]</span>
-<span class="k">print</span> <span class="s2">&quot;distinct Location visited by Jackal::</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">location_jack</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="k">print</span> <span class="s2">&quot;distinct Location visited by Jackal::</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">mew</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -11870,12 +11879,12 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>distinct Location visited by Jackal::
-                    AREADESCRIPTION        LAT       LONG
-0   BSC80:20_MHBD_AnuComplx_WL2033A  17.603528  80.004778
-8         BSC80:33_Parakala_WL2039A  18.194083  79.701111
-11  BSC80:57_MHBD_GovtHsptl_WL2079A  17.594444  80.001694
-12   BSC80:21_MHBD_TeleExge_WL2003A  17.596361  79.995222
-18   BSC01:32_Apparajupally_WL2138B    17.7142     79.995
+  NICKNAME   STARTDATE   STARTTIME                  AREADESCRIPTION
+0   Jackal  01/01/2014  5:40:06 AM  BSC80:20_MHBD_AnuComplx_WL2033A
+1   Jackal  01/01/2014  5:51:43 AM  BSC80:20_MHBD_AnuComplx_WL2033A
+2   Jackal  01/01/2014  7:13:29 AM  BSC80:20_MHBD_AnuComplx_WL2033A
+3   Jackal  01/01/2014  2:31:08 PM  BSC80:20_MHBD_AnuComplx_WL2033A
+4   Jackal  01/01/2014  2:40:11 PM  BSC80:20_MHBD_AnuComplx_WL2033A
 </pre>
 </div>
 </div>
@@ -11886,7 +11895,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[409]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
@@ -11922,7 +11931,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[410]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">mew</span><span class="p">[:</span><span class="mi">15</span><span class="p">]</span>
@@ -11964,7 +11973,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[411]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">mew</span><span class="o">=</span><span class="n">mew</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;STARTDATE&#39;</span><span class="p">,</span><span class="s1">&#39;STARTTIME&#39;</span><span class="p">,</span><span class="s1">&#39;NICKNAME&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -11978,7 +11987,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[477]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#deleted additional features....... like date,time bcoz we already got genaralised </span>
@@ -11995,12 +12004,12 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  DAY TIME  AREADESCRIPTION
-0   2    5               26
-1   2    5               26
-2   2    7               26
-3   2   14               26
-4   2   14               26
+<pre>  DAY TIME                  AREADESCRIPTION
+0   2    5  BSC80:20_MHBD_AnuComplx_WL2033A
+1   2    5  BSC80:20_MHBD_AnuComplx_WL2033A
+2   2    7  BSC80:20_MHBD_AnuComplx_WL2033A
+3   2   14  BSC80:20_MHBD_AnuComplx_WL2033A
+4   2   14  BSC80:20_MHBD_AnuComplx_WL2033A
 </pre>
 </div>
 </div>
@@ -12011,7 +12020,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[413]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
@@ -12033,7 +12042,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[414]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">mew</span><span class="p">[</span><span class="s1">&#39;AREADESCRIPTION&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -12104,7 +12113,7 @@ Name: AREADESCRIPTION, dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[415]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
@@ -12112,12 +12121,26 @@ Name: AREADESCRIPTION, dtype: int64
 <span class="n">lb_make</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
 
 <span class="n">mew</span><span class="p">[</span><span class="s1">&#39;AREADESCRIPTION&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">lb_make</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">mew</span><span class="p">[</span><span class="s1">&#39;AREADESCRIPTION&#39;</span><span class="p">])</span>
-<span class="k">print</span> <span class="n">mew</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-<span class="n">X</span><span class="o">=</span><span class="n">mew</span><span class="p">[[</span><span class="s1">&#39;DAY&#39;</span><span class="p">,</span><span class="s1">&#39;TIME&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
-<span class="c1">#print type(X)</span>
+
+<span class="n">dummies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">mew</span><span class="p">[</span><span class="s2">&quot;DAY&quot;</span><span class="p">],</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;DAY&quot;</span><span class="p">)</span>
+<span class="n">mew</span>      <span class="o">=</span> <span class="n">mew</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dummies</span><span class="p">)</span>
+
+<span class="n">dummies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">mew</span><span class="p">[</span><span class="s2">&quot;TIME&quot;</span><span class="p">],</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;TIME&quot;</span><span class="p">)</span>
+<span class="n">mew</span>      <span class="o">=</span> <span class="n">mew</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dummies</span><span class="p">)</span>
+
+
+<span class="k">del</span> <span class="n">mew</span><span class="p">[</span><span class="s1">&#39;DAY&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">mew</span><span class="p">[</span><span class="s1">&#39;TIME&#39;</span><span class="p">]</span>
+
+<span class="n">mew_c</span><span class="o">=</span><span class="n">mew</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">mew_c</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;AREADESCRIPTION&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">X</span><span class="o">=</span><span class="n">mew_c</span><span class="o">.</span><span class="n">values</span>
+<span class="k">print</span> <span class="n">X</span>
 <span class="n">y</span><span class="o">=</span><span class="n">mew</span><span class="p">[</span><span class="s1">&#39;AREADESCRIPTION&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="c1">#print type(y)</span>
+<span class="k">print</span> <span class="n">y</span>
 </pre></div>
 
 </div>
@@ -12130,12 +12153,37 @@ Name: AREADESCRIPTION, dtype: int64
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  DAY TIME  AREADESCRIPTION
-0   2    5               26
-1   2    5               26
-2   2    7               26
-3   2   14               26
-4   2   14               26
+<pre>[[26  0  0 ...,  0  0  0]
+ [26  0  0 ...,  0  0  0]
+ [26  0  0 ...,  0  0  0]
+ ..., 
+ [26  0  0 ...,  0  0  0]
+ [11  0  0 ...,  0  0  0]
+ [41  1  0 ...,  0  0  0]]
+[26 26 26 26 26 26 26 26 31 31 26 41 27 41 26 41 41 26  4 34 26 26 26 26 26
+ 27 26 26 26 26 26 26 26 26  5 30  2 29 26 26 26 27 26 26 26 26 26 26 26 26
+ 26 26 26 26 26 26 26 26 41 26 27 26 27 26 26 26  0  1 10  8  9  9 26 26 30
+ 21 23 18 26 26 30 26 26 13 13 13 13 13 13 26 26 26 26 26 26 26 26 27 37 41
+ 24 18 16 13 27 41  6 26 26 25 25 16 16 16 16 16 26 41 41 13 13 13 13 17 17
+ 18 18 18 18 18 18 26 22 22  7 13 26 26 26  4 41 41 43 13 32 26 26 26 26 26
+ 26 26 27 41 26 30 15 15 26 26 26 13 34 29  4 25 25 25 25 41 26 29 26 41 29
+ 29 26 26 41 27 41 29 29  4 41 26 39 39 39 39 26  4 29 29 29 41 41 36 23 16
+ 26 12 27 26 26 26 26 26 26 35 41 41 41 39 33 26 26 26 26 26 26 26 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 34 26 26 11 26 39 26 11 11
+ 11 11 34 26 26 26 26 26 26 26 26 26 38 38 26 26 26 26 26 26 26 26 26 26 27
+ 26 26 29 30 30 30 26 26 26 33 26 26 25 41 41 41 41 26 26 26 26 23 30 26 26
+ 26 41 41 27 26 26 41 42 14 25 39 34 34 20 26 26 26 26 39 34 34 34 34 34 26
+ 26 26 26 26 15 26 33 20 41 27 26 26 26 26 18 26 39 26 26 26 26 26 26 26 42
+ 23 16 16 26  5  5  5 34 26 29 29 33  3 26 26 26 11 30 33 34 20 19 26 41 26
+ 26 26 26 39 26 41 26 41 26 11 33 34 27 27 26 26 26 39 39 39 30 20 20 37 30
+ 20 20 20 20 26 27 26 26 14 26 26 26 26 26 26 26 26  4 26 26 21 26 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 40 40 40 40 26 27 26 26 26 28 26 26 26 26
+ 26 26 26 26 26 27 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26
+ 26 26 26 26 26 26 26 26 41 41 41 26 26 26 26 26 26 26 26 41 26 26 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 27 27 26 26 26 26 26 26 26 26 26 41 41 41
+ 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 26 26
+ 11 41]
 </pre>
 </div>
 </div>
@@ -12156,7 +12204,7 @@ Name: AREADESCRIPTION, dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[416]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
@@ -12170,7 +12218,7 @@ Name: AREADESCRIPTION, dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[417]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -12184,7 +12232,7 @@ Name: AREADESCRIPTION, dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[418]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
@@ -12202,8 +12250,16 @@ Name: AREADESCRIPTION, dtype: int64
 
 
 <div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/siddharth/miniconda2/lib/python2.7/site-packages/sklearn/model_selection/_split.py:581: Warning: The least populated class in y has only 1 members, which is too few. The minimum number of groups for any class cannot be less than n_splits=27.
+  % (min_groups, self.n_splits)), Warning)
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Cross Validation Score : 69.3495679569 %
+<pre>Cross Validation Score : 98.2568522401 %
 </pre>
 </div>
 </div>
@@ -12214,7 +12270,7 @@ Name: AREADESCRIPTION, dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[419]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
@@ -12231,7 +12287,7 @@ Name: AREADESCRIPTION, dtype: int64
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test score, 0.620689655172 %
+<pre>Test score, 0.965517241379 %
 </pre>
 </div>
 </div>
@@ -12251,18 +12307,16 @@ Name: AREADESCRIPTION, dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[420]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="k">print</span> <span class="s2">&quot;example prediction:Jackal&#39;s position on Monday,7 pm&quot;</span>
-<span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">19</span><span class="p">])</span>
-<span class="k">print</span> <span class="n">lb_make</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">a</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="s2">&quot;example prediction:Jackal&#39;s position&quot;</span>
+<span class="k">print</span> <span class="n">lb_make</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 <span class="k">print</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span>
 
-<span class="k">print</span> <span class="s2">&quot;example prediction:Jackal&#39;s position on Thursday,2 pm&quot;</span>
-<span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">14</span><span class="p">])</span>
-<span class="k">print</span> <span class="n">lb_make</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">a</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="s2">&quot;example prediction:Jackal&#39;s position-2&quot;</span>
+<span class="k">print</span> <span class="n">lb_make</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 
 </div>
@@ -12275,13 +12329,13 @@ Name: AREADESCRIPTION, dtype: int64
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>example prediction:Jackal&#39;s position on Monday,7 pm
-BSC80:20_MHBD_AnuComplx_WL2033A
+<pre>example prediction:Jackal&#39;s position
+[&#39;BSC72:43_Srirampur_AD2046A&#39;]
 
 
 
-example prediction:Jackal&#39;s position on Thursday,2 pm
-BSC80:57_MHBD_GovtHsptl_WL2079A
+example prediction:Jackal&#39;s position-2
+[&#39;BSC80:20_MHBD_AnuComplx_WL2033A&#39;]
 </pre>
 </div>
 </div>
@@ -12311,7 +12365,7 @@ BSC80:57_MHBD_GovtHsptl_WL2079A
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[458]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
@@ -12325,7 +12379,7 @@ BSC80:57_MHBD_GovtHsptl_WL2079A
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[459]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">gnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
@@ -12339,7 +12393,7 @@ BSC80:57_MHBD_GovtHsptl_WL2079A
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[459]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12354,7 +12408,7 @@ BSC80:57_MHBD_GovtHsptl_WL2079A
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[491]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Prediction Accuracy, &quot;</span><span class="p">,</span><span class="n">gnb</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="s2">&quot;%&quot;</span>
@@ -12373,8 +12427,8 @@ BSC80:57_MHBD_GovtHsptl_WL2079A
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Prediction Accuracy,  50.0 %
-Cross Validation Score : 48.7337960442 %
+<pre>Prediction Accuracy,  93.1034482759 %
+Cross Validation Score : 97.716256102 %
 </pre>
 </div>
 </div>
@@ -12394,7 +12448,7 @@ Cross Validation Score : 48.7337960442 %
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[492]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
@@ -12417,8 +12471,8 @@ Cross Validation Score : 48.7337960442 %
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Prediction Accuracy,  65.5172413793 %
-Cross Validation Score : 68.7114625637 %
+<pre>Prediction Accuracy,  74.1379310345 %
+Cross Validation Score : 83.9071172172 %
 </pre>
 </div>
 </div>
@@ -12429,17 +12483,15 @@ Cross Validation Score : 68.7114625637 %
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[478]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;example prediction:Jackal&#39;s position on Monday,7 pm&quot;</span>
-<span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">19</span><span class="p">])</span>
-<span class="k">print</span> <span class="n">lb_make</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">a</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;example prediction:Jackal&#39;s position&quot;</span>
+<span class="k">print</span> <span class="n">lb_make</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="mi">6</span><span class="p">]))</span>
 <span class="k">print</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span>
 
-<span class="k">print</span> <span class="s2">&quot;example prediction:Jackal&#39;s position on Thursday,2 pm&quot;</span>
-<span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">14</span><span class="p">])</span>
-<span class="k">print</span> <span class="n">lb_make</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">a</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="s2">&quot;example prediction:Jackal&#39;s position&quot;</span>
+<span class="k">print</span> <span class="n">lb_make</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="mi">7</span><span class="p">]))</span>
 </pre></div>
 
 </div>
@@ -12452,13 +12504,13 @@ Cross Validation Score : 68.7114625637 %
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>example prediction:Jackal&#39;s position on Monday,7 pm
-BSC80:20_MHBD_AnuComplx_WL2033A
+<pre>example prediction:Jackal&#39;s position
+[&#39;BSC80:20_MHBD_AnuComplx_WL2033A&#39;]
 
 
 
-example prediction:Jackal&#39;s position on Thursday,2 pm
-BSC80:57_MHBD_GovtHsptl_WL2079A
+example prediction:Jackal&#39;s position
+[&#39;BSC80:20_MHBD_AnuComplx_WL2033A&#39;]
 </pre>
 </div>
 </div>
@@ -12489,7 +12541,7 @@ BSC80:57_MHBD_GovtHsptl_WL2079A
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[485]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
@@ -12505,7 +12557,7 @@ BSC80:57_MHBD_GovtHsptl_WL2079A
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[485]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12523,7 +12575,7 @@ BSC80:57_MHBD_GovtHsptl_WL2079A
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[496]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;prediction accuracy&quot;</span><span class="p">,</span><span class="n">logistic</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="s2">&quot; %&quot;</span>
@@ -12542,8 +12594,8 @@ BSC80:57_MHBD_GovtHsptl_WL2079A
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>prediction accuracy 58.6206896552  %
-Cross Validation Score : 64.845082409 %
+<pre>prediction accuracy 72.4137931034  %
+Cross Validation Score : 77.0894402096 %
 </pre>
 </div>
 </div>
@@ -12557,12 +12609,22 @@ Cross Validation Score : 64.845082409 %
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><h1><center>FINAL RESULT</center><br>
-</h1>
-SVM=&gt;test:62% cross validation:69.34%
-<br>KNN=&gt;test:65% cross validation:69%
-<br>Logistic Regression=&gt;test:58% cross validation:65%
-<br>Naive Bayes=&gt;test:50% cross validation:48%</p>
+<h1 id="FINAL-RESULTS">FINAL RESULTS<a class="anchor-link" href="#FINAL-RESULTS">&#182;</a></h1><h2 id="SVM">SVM<a class="anchor-link" href="#SVM">&#182;</a></h2><ol>
+<li>Test score:96.5%</li>
+<li>Cross Validation:98.25%</li>
+</ol>
+<h2 id="Naive-Bayes">Naive Bayes<a class="anchor-link" href="#Naive-Bayes">&#182;</a></h2><ol>
+<li>Test score:93%</li>
+<li>Cross Validation:97%</li>
+</ol>
+<h2 id="KNN">KNN<a class="anchor-link" href="#KNN">&#182;</a></h2><ol>
+<li>Test score:74%</li>
+<li>Cross Validation:83%</li>
+</ol>
+<h2 id="Logistic-Regression">Logistic Regression<a class="anchor-link" href="#Logistic-Regression">&#182;</a></h2><ol>
+<li>Test score:72.43%</li>
+<li>Cross Validation:77.08%</li>
+</ol>
 
 </div>
 </div>
@@ -12572,8 +12634,7 @@ SVM=&gt;test:62% cross validation:69.34%
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>KNN has the highest test accuracy and good cross validation Score.</p>
-
+<h2 id="SVM-has-the-highest-test-accuracy-as-well-as-cross-validation-Score.">SVM has the highest test accuracy as well as cross validation Score.<a class="anchor-link" href="#SVM-has-the-highest-test-accuracy-as-well-as-cross-validation-Score.">&#182;</a></h2><h2 id="even-Naive-Bayes-is-preforming-good">even Naive Bayes is preforming good<a class="anchor-link" href="#even-Naive-Bayes-is-preforming-good">&#182;</a></h2>
 </div>
 </div>
 </div>
